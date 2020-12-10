@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08F665CA2581886200A3BFFC /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 08F665C92581886200A3BFFC /* SwiftUICharts */; };
 		65C6F2DD258059560021AE29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C6F2DC258059560021AE29 /* AppDelegate.swift */; };
 		65C6F2DF258059560021AE29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C6F2DE258059560021AE29 /* SceneDelegate.swift */; };
 		65C6F2E1258059560021AE29 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C6F2E0258059560021AE29 /* ContentView.swift */; };
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08F665CA2581886200A3BFFC /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,8 +62,8 @@
 				65C6F2DE258059560021AE29 /* SceneDelegate.swift */,
 				65C6F2E0258059560021AE29 /* ContentView.swift */,
 				65C6F2E2258059560021AE29 /* Assets.xcassets */,
-				65C6F2E7258059560021AE29 /* LaunchScreen.storyboard */,
 				65C6F2EA258059560021AE29 /* Info.plist */,
+				65C6F2E7258059560021AE29 /* LaunchScreen.storyboard */,
 				65C6F2E4258059560021AE29 /* Preview Content */,
 			);
 			path = HeartRate;
@@ -91,6 +93,9 @@
 			dependencies = (
 			);
 			name = HeartRate;
+			packageProductDependencies = (
+				08F665C92581886200A3BFFC /* SwiftUICharts */,
+			);
 			productName = HeartRate;
 			productReference = 65C6F2D9258059560021AE29 /* HeartRate.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +124,9 @@
 				Base,
 			);
 			mainGroup = 65C6F2D0258059560021AE29;
+			packageReferences = (
+				08F665C82581886200A3BFFC /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 65C6F2DA258059560021AE29 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -342,6 +350,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		08F665C82581886200A3BFFC /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		08F665C92581886200A3BFFC /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08F665C82581886200A3BFFC /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 65C6F2D1258059560021AE29 /* Project object */;
 }
