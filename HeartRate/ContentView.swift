@@ -27,12 +27,19 @@ struct ContentView: View {
 
 struct LineCharts:View {
     @State var vals: [Double]=[200,250,212,192,203,199,189,215,243]
-    let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-        print("Timer fired!")
-    }
+    @State var timeRemaining = 100
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
     var body: some View {
         VStack{
-            LineChartView(data: vals, title: "Heart Rate")
+            LineChartView(data: vals, title: "Heart Rate", legend: "BPM")
+                .onReceive(timer) { _ in
+                    if self.timeRemaining > 0{
+                        self.timeRemaining -= 1
+                        self.vals.append(Double.random(in: 195.0...265.0))
+                        self.vals.remove(at: 0)
+                    }
+            }
         }
     }
 }
