@@ -12,6 +12,7 @@ import SwiftUICharts
 struct ContentView: View {
 
     @State var tabIndex:Int = 0
+
     var body: some View {
         
         TabView(selection:$tabIndex){
@@ -25,9 +26,13 @@ struct ContentView: View {
 }
 
 struct LineCharts:View {
+    @State var vals: [Double]=[200,250,212,192,203,199,189,215,243]
+    let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+        print("Timer fired!")
+    }
     var body: some View {
         VStack{
-            LineChartView(data: [200,250,212,192,203,199,189,215,243], title: "Heart Rate")
+            LineChartView(data: vals, title: "Heart Rate")
         }
     }
 }
