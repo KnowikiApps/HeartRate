@@ -21,6 +21,7 @@ struct ContentView: View {
                 Text("Heart Rate Monitor")
                 }}.tag(1)
         }
+        
 
     }
 }
@@ -32,7 +33,7 @@ struct LineCharts:View {
 
     var body: some View {
         VStack{
-            LineChartView(data: vals, title: "Heart Rate", legend: "BPM")
+            LineView(data: vals,title: "Heart Rate", legend: "BPM")
                 .onReceive(timer) { _ in
                     if self.timeRemaining > 0{
                         self.timeRemaining -= 1
@@ -41,6 +42,7 @@ struct LineCharts:View {
                     }
             }
         }
+        
     }
 }
 
